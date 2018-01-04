@@ -19,6 +19,10 @@ userdebug_or_eng(`
   allow logd logd_debug:file create_file_perms;
 ')
 
+# Read access to pseudo filesystems.
+r_dir_file(logd, proc_net)
+
+
 ###
 ### Neverallow rules
 ###

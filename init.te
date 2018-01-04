@@ -121,3 +121,7 @@ allow init app_data_file:{ lnk_file dir } { getattr relabelfrom };
 neverallow { domain -kernel} init:process dyntransition;
 neverallow domain init:process transition;
 neverallow init { file_type fs_type }:file entrypoint;
+
+# TODO: in cm-14.1, init has write access here, but not in cm-12.1
+# So simply granting read access, which was removed from domain.te
+r_dir_file(init, proc_net)

@@ -100,3 +100,6 @@ auditallow vold userdata_block_device:blk_file rw_file_perms;
 # For UMS tuning
 allow vold proc_dirty_ratio:file rw_file_perms;
 
+# Read access to pseudo filesystems.
+r_dir_file(vold, proc_net)
+
