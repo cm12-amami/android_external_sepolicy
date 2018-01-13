@@ -31,3 +31,6 @@ auditallow radio system_radio_prop:property_service set;
 allow radio ctl_rildaemon_prop:property_service set;
 
 allow radio radio_service:service_manager add;
+
+# Read access to /proc/net
+r_dir_file(radio, proc_net)
